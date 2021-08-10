@@ -16,8 +16,11 @@ export default {
     },
     methods: {
         addTodo: function(){
-            localStorage.setItem(this.newTodoItem, this.newTodoItem);
-            this.clearInput();
+            if(this.newTodoItem !== ''){
+                var obj = {completed: false, item: this.newTodoItem};
+                localStorage.setItem(this.newTodoItem, JSON.stringify(obj)); //로컬스토리지에 배열이 스트링으로 저장됨
+                this.clearInput();
+            }
         },
         clearInput: function(){
             this.newTodoItem = '';
