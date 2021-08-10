@@ -1,9 +1,9 @@
 <template>
   <div>
       <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
+          <li v-for="todoItem in todoItems" :key="todoItem">
+            {{ todoItem }}
+          </li>
       </ul>
   </div>
 </template>
