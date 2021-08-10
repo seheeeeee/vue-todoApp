@@ -16,9 +16,11 @@ export default {
         addTodo: function(){
             //저장하는 로직
             localStorage.setItem(this.newTodoItem, this.newTodoItem);
-            this.newTodoItem = ''; //초기화
+            this.clearInput();
         },
-
+        clearInput: function(){
+            this.newTodoItem = '';//초기화 로직 분리
+        }
     }
 }
 </script>
