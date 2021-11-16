@@ -28,6 +28,7 @@ export default {
         },
         toggleComplete: function(todoItem){
             todoItem.completed = !todoItem.completed;
+            //localStorage에 삭제 후 다시 등록해야함(갱신)
             localStorage.removeItem(todoItem.item);
             localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
         }
